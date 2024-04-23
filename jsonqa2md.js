@@ -8,7 +8,7 @@ const testResultsFilename = 'build/test-results.json';
 const reqTutorial = 'tutorial-user-stories.html';
 
 const reqMdFilename = 'resources/doc/tutorials/user-stories.md';
-const testResultsMdFilename = 'resources/doc/tutorials/tests.md';
+const testResultsMdFilename = 'resources/doc/tutorials/test-results.md';
 
 // emoji
 const emojiCheckMark = String.fromCodePoint(0x2705);

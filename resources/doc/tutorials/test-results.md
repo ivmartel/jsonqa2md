@@ -4,7 +4,7 @@
 
 Date: Tue Apr 23 2024 18:55:01 GMT+0200 (Central European Summer Time)
 
-Commit: [273ad30](https://github.com/ivmartel/jsonqa2md/commit/273ad306ba20e282742a35599ebd6668b1e762d9)
+Commit: [ffbf8bd](https://github.com/ivmartel/jsonqa2md/commit/ffbf8bd9ecdabdc1a624061c0c1abd3a646e8a7e)
 
 Browser: Chrome Headless 124.0.6367.60 (Linux x86_64)
 
