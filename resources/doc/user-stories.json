@@ -1,0 +1,40 @@
+{
+  "groups": [
+    {
+      "name": "math",
+      "description": "All math related operations."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "JQ2MD-001",
+      "name": "Add two numbers",
+      "group": "math",
+      "description": "The user must be able to add two numbers."
+    },
+    {
+      "id": "JQ2MD-002",
+      "name": "Substract two numbers",
+      "group": "math",
+      "description": "The user must be able to substract two numbers."
+    },
+    {
+      "id": "JQ2MD-002",
+      "name": "Multiply two numbers",
+      "group": "math",
+      "description": "The user must be able to multiply two numbers."
+    },
+    {
+      "id": "JQ2MD-003",
+      "name": "Multiply two numbers",
+      "group": "math",
+      "description": "The user must be able to multiply two numbers."
+    },
+    {
+      "id": "JQ2MD-004",
+      "name": "Divide two numbers",
+      "group": "math",
+      "description": "The user must be able to divide two numbers."
+    }
+  ]
+}
