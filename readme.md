@@ -19,4 +19,14 @@ Default output:
 - `resources/doc/tutorials/user-stories.md`: with warnings for duplicate keys and/or names
 - `resources/doc/tutorials/test-results.md`: with a traceability list to see tested requirements
 
+Typical workflow:
+```sh
+# run tests to generate test results
+yarn run test-ci
+# convert json to md
+node jsonqa2md
+# integrate in documentation
+yarn run doc
+```
+
 Inspired from https://github.com/davidahouse/junit-to-md
