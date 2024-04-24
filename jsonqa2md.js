@@ -161,7 +161,7 @@ reqWriteStream.end();
 // write tests results
 
 var testWriteStream = fs.createWriteStream(testResultsMdFilename);
-testWriteStream.write('# ' + pkgJSON.name + ' Tests Results\n');
+testWriteStream.write('# Tests Results\n');
 testWriteStream.write('\n');
 
 testWriteStream.write('## Context\n');
@@ -188,10 +188,23 @@ testWriteStream.write('skipped: ' + lastResult.skipped + ', ');
 testWriteStream.write('total time: ' + lastResult.totalTime + 'ms)\n');
 testWriteStream.write('\n');
 
-testWriteStream.write('## Details\n');
+testWriteStream.write('## Tests details\n');
 testWriteStream.write('\n');
-testWriteStream.write('(' + numberOfTestsNoReq + ' test(s) with no requirement, ' +
-  numberOfTestsBadReq + ' test(s) with bad requirement reference)\n');
+const numberOfTestsWithReq = lastResult.total - (numberOfTestsNoReq + numberOfTestsBadReq);
+const finalSWithReq = numberOfTestsWithReq > 1 ? 's' : '';
+testWriteStream.write('(' + numberOfTestsWithReq +
+  ' / ' +  lastResult.total + ' test' + finalSWithReq + ' with requirement(s)');
+if (numberOfTestsNoReq !== 0) {
+  const finalS = numberOfTestsNoReq > 1 ? 's' : '';
+  testWriteStream.write(', ' + numberOfTestsNoReq +
+    ' test' + finalS + ' with no requirement');
+}
+if (numberOfTestsBadReq !== 0) {
+  const finalS = numberOfTestsNoReq > 1 ? 's' : '';
+  testWriteStream.write(', ' + numberOfTestsBadReq +
+    ' test' + finalS + ' with bad requirement reference');
+}
+testWriteStream.write(')\n');
 testWriteStream.write('\n');
 const testSuiteKeys = Object.keys(testSuites);
 for (const suite of testSuiteKeys) {
@@ -227,7 +240,9 @@ for (const suite of testSuiteKeys) {
 
 testWriteStream.write('\n## Traceability\n');
 testWriteStream.write('\n');
-testWriteStream.write('(' + numberOfReqNoTests + ' untested requirements)\n');
+const numberOfReqWithTest = requirements.length - numberOfReqNoTests;
+testWriteStream.write('(' + numberOfReqWithTest +
+  ' / ' +  requirements.length + ' tested requirements)\n');
 testWriteStream.write('\n');
 for (const groupKey of resGroupKeys) {
   testWriteStream.write('### ' + groupKey + '\n');

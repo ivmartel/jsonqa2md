@@ -1,10 +1,10 @@
-# jsonqa2md Tests Results
+# Tests Results
 
 ## Context
 
 Date: Tue Apr 23 2024 18:55:01 GMT+0200 (Central European Summer Time)
 
-Commit: [ffbf8bd](https://github.com/ivmartel/jsonqa2md/commit/ffbf8bd9ecdabdc1a624061c0c1abd3a646e8a7e)
+Commit: [8142c74](https://github.com/ivmartel/jsonqa2md/commit/8142c74690a60ad763ecd0c13bcff73c48681881)
 
 Browser: Chrome Headless 124.0.6367.60 (Linux x86_64)
 
@@ -15,9 +15,9 @@ Failed: 1 ❌
 
 (total: 6, skipped: 0, total time: 7ms)
 
-## Details
+## Tests details
 
-(1 test(s) with no requirement, 1 test(s) with bad requirement reference)
+(4 / 6 tests with requirement(s), 1 test with no requirement, 1 test with bad requirement reference)
 
 ### math
 
@@ -41,7 +41,7 @@ Failed: 1 ❌
 
 ## Traceability
 
-(4 untested requirements)
+(1 / 5 tested requirements)
 
 ### math
 
