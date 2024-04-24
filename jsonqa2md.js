@@ -119,7 +119,11 @@ for (const req of requirements) {
 // write requirements
 
 var reqWriteStream = fs.createWriteStream(reqMdFilename);
-reqWriteStream.write('# ' + pkgJSON.name + ' User stories\n');
+reqWriteStream.write('# User Stories\n');
+reqWriteStream.write('\n');
+reqWriteStream.write('## Introduction\n');
+reqWriteStream.write(reqJSON.introduction + '\n');
+reqWriteStream.write('\n');
 const resGroupKeys = Object.keys(reqGroups);
 for (const groupKey of resGroupKeys) {
   reqWriteStream.write('## ' + groupKey + '\n');

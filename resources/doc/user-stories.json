@@ -1,4 +1,5 @@
 {
+  "introduction": "Here are the user stories of the demo math library.",
   "groups": [
     {
       "name": "math",
