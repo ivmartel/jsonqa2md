@@ -120,7 +120,7 @@ for (const req of requirements) {
 // ---------------------------------------------------------------------
 // write requirements
 
-var reqWriteStream = fs.createWriteStream(reqMdFilename);
+const reqWriteStream = fs.createWriteStream(reqMdFilename);
 reqWriteStream.write('# User Stories\n');
 reqWriteStream.write('\n');
 reqWriteStream.write('## Introduction\n');
@@ -166,7 +166,7 @@ reqWriteStream.end();
 // ---------------------------------------------------------------------
 // write tests results
 
-var testWriteStream = fs.createWriteStream(testResultsMdFilename);
+const testWriteStream = fs.createWriteStream(testResultsMdFilename);
 testWriteStream.write('# Tests Results\n');
 testWriteStream.write('\n');
 
