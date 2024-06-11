@@ -58,7 +58,7 @@ for (const testResult of testResults) {
   // find req
   const match = testDescPattern.exec(testResult.description);
   if (match) {
-    testName = match[1]
+    testName = match[1];
     testResult.name = testName;
 
     const reqId = match[2];
@@ -86,7 +86,9 @@ for (const testResult of testResults) {
   // test code link
   const testNameLink = testName.replaceAll(' ', '-');
   const testNameAnchor = testNameLink.toLowerCase();
-  const linkUrl = 'module-tests_' + testResult.suite + '.html#~' + encodeURIComponent(testNameAnchor);
+  const linkUrl =
+    'module-tests_' + testResult.suite +
+    '.html#~' + encodeURIComponent(testNameAnchor);
   const linkText = 'jsdoc';
   testResult.jsdoclink = '[' + linkText + '](' + linkUrl + ')';
   // add to list
@@ -138,7 +140,9 @@ for (const groupKey of resGroupKeys) {
     reqWriteStream.write(req.description + '\n');
     // check duplicate id
     const reqSameId = requirements.find((element) => {
-      return element !== req && element.group === req.group && element.id === req.id;
+      return element !== req &&
+        element.group === req.group &&
+        element.id === req.id;
     });
     if (typeof reqSameId !== 'undefined') {
       reqWriteStream.write('\n' + emojiWarn +
@@ -146,7 +150,9 @@ for (const groupKey of resGroupKeys) {
     }
     // check duplicate name
     const reqSameName = requirements.find((element) => {
-      return element !== req && element.group === req.group && element.name === req.name;
+      return element !== req &&
+        element.group === req.group &&
+        element.name === req.name;
     });
     if (typeof reqSameName !== 'undefined') {
       reqWriteStream.write('\n' + emojiWarn +
@@ -181,8 +187,10 @@ testWriteStream.write('\nBrowser: ' + testBrowser.name + '\n');
 testWriteStream.write('\n');
 
 testWriteStream.write('## Summary\n');
-testWriteStream.write('Success: ' + lastResult.success + ' ' + emojiCheckMark + '\n');
-testWriteStream.write('\nFailed: ' + lastResult.failed + ' ' + emojiCrossMark + '\n');
+testWriteStream.write(
+  'Success: ' + lastResult.success + ' ' + emojiCheckMark + '\n');
+testWriteStream.write(
+  '\nFailed: ' + lastResult.failed + ' ' + emojiCrossMark + '\n');
 testWriteStream.write('\n(total: ' + lastResult.total + ', ');
 testWriteStream.write('skipped: ' + lastResult.skipped + ', ');
 testWriteStream.write('total time: ' + lastResult.totalTime + 'ms)\n');
@@ -190,10 +198,11 @@ testWriteStream.write('\n');
 
 testWriteStream.write('## Tests details\n');
 testWriteStream.write('\n');
-const numberOfTestsWithReq = lastResult.total - (numberOfTestsNoReq + numberOfTestsBadReq);
+const numberOfTestsWithReq =
+  lastResult.total - (numberOfTestsNoReq + numberOfTestsBadReq);
 const finalSWithReq = numberOfTestsWithReq > 1 ? 's' : '';
 testWriteStream.write('(' + numberOfTestsWithReq +
-  ' / ' +  lastResult.total + ' test' + finalSWithReq + ' with requirement(s)');
+  ' / ' + lastResult.total + ' test' + finalSWithReq + ' with requirement(s)');
 if (numberOfTestsNoReq !== 0) {
   const finalS = numberOfTestsNoReq > 1 ? 's' : '';
   testWriteStream.write(', ' + numberOfTestsNoReq +
@@ -226,7 +235,8 @@ for (const suite of testSuiteKeys) {
         testWriteStream.write(testResult.req.link);
       } else {
         // description matches regex but no requirement found
-        testWriteStream.write('URS #' + testResult.req.id + ' ' + testResult.req.name + ' (' + emojiWarn + ' Unknown)');
+        testWriteStream.write('URS #' + testResult.req.id +
+          ' ' + testResult.req.name + ' (' + emojiWarn + ' Unknown)');
       }
     } else {
       testWriteStream.write(emojiWarn + ' No requirement reference');
@@ -242,7 +252,7 @@ testWriteStream.write('\n## Traceability\n');
 testWriteStream.write('\n');
 const numberOfReqWithTest = requirements.length - numberOfReqNoTests;
 testWriteStream.write('(' + numberOfReqWithTest +
-  ' / ' +  requirements.length + ' tested requirements)\n');
+  ' / ' + requirements.length + ' tested requirements)\n');
 testWriteStream.write('\n');
 for (const groupKey of resGroupKeys) {
   testWriteStream.write('### ' + groupKey + '\n');

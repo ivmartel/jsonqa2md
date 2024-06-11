@@ -39,7 +39,7 @@
     "webpack-merge": "^5.10.0"
   },
   "scripts": {
-    "lint": "eslint 'src/**/*.js' 'tests/**/*.js'",
+    "lint": "eslint 'src/**/*.js' 'tests/**/*.js' *.js",
     "test": "karma start ./karma.conf.js",
     "test-ci": "karma start ./karma.conf.js --browsers ChromeHeadless --reporters progress,coverage,json --single-run",
     "doc": "jsdoc -c resources/doc/jsdoc.conf.json"
