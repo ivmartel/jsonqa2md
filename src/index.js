@@ -1,3 +1,3 @@
-import { add } from "./math";
+import {add} from './math';
 
-export { add };
+export {add};

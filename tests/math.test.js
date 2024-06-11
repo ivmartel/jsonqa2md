@@ -1,4 +1,4 @@
-import { add } from "../src/math";
+import {add} from '../src/math';
 
 /**
  * Tests for the 'math.js' file.
@@ -16,7 +16,7 @@ QUnit.module('math');
  * @function module:tests/math~add-int-numbers
  */
 QUnit.test('Add int numbers - #JQ2MD-001 Add two numbers', function (assert) {
-  assert.equal(add(1,1), 2, 'add test #0');
+  assert.equal(add(1, 1), 2, 'add test #0');
 });
 
 /**
@@ -25,7 +25,7 @@ QUnit.test('Add int numbers - #JQ2MD-001 Add two numbers', function (assert) {
  * @function module:tests/math~add-float-numbers
  */
 QUnit.test('Add float numbers - #JQ2MD-001 Add two numbers', function (assert) {
-  assert.equal(add(1.1,1.1), 2.3, 'add test #0');
+  assert.equal(add(1.1, 1.1), 2.3, 'add test #0');
 });
 
 /**
@@ -34,7 +34,7 @@ QUnit.test('Add float numbers - #JQ2MD-001 Add two numbers', function (assert) {
  * @function module:tests/math~add-zero
  */
 QUnit.test('Add zero - #JQ2MD-001 Add two numbers', function (assert) {
-  assert.equal(add(0,0), 0, 'add test #0');
+  assert.equal(add(0, 0), 0, 'add test #0');
 });
 
 /**
@@ -43,7 +43,7 @@ QUnit.test('Add zero - #JQ2MD-001 Add two numbers', function (assert) {
  * @function module:tests/math~add-negative
  */
 QUnit.test('Add negative - #JQ2MD-001 Add two numbers', function (assert) {
-  assert.equal(add(-1,-1), -2, 'add test #0');
+  assert.equal(add(-1, -1), -2, 'add test #0');
 });
 
 /**
@@ -52,7 +52,7 @@ QUnit.test('Add negative - #JQ2MD-001 Add two numbers', function (assert) {
  * @function module:tests/math~add-two-numbers0
  */
 QUnit.test('Add two numbers0', function (assert) {
-  assert.equal(add(1,1), 2, 'add test #0');
+  assert.equal(add(1, 1), 2, 'add test #0');
 });
 
 /**
@@ -61,5 +61,5 @@ QUnit.test('Add two numbers0', function (assert) {
  * @function module:tests/math~add-two-numbers1
  */
 QUnit.test('Add two numbers1 - #JQ2MD-002 Add two numbers', function (assert) {
-  assert.equal(add(1,1), 2, 'add test #0');
+  assert.equal(add(1, 1), 2, 'add test #0');
 });
