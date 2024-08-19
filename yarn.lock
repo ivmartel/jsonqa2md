@@ -1291,10 +1291,10 @@
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.1.tgz#621270c02c0a5d4f4669eb1caa9723c91cf201de"
   integrity sha512-dzJtaDAAoXx4GCOJpbB2eG/Qj8VDpdwkLsWGzGm+0L7E8/434RyMbAHmk9ubXWVAb9nXmc44jUf8GKqVDiKezg==
 
-"@stylistic/eslint-plugin-js@^2.6.2":
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/@stylistic/eslint-plugin-js/-/eslint-plugin-js-2.6.2.tgz#ad4c2f35d49927fa81f4667b413a7de9640cb850"
-  integrity sha512-wCr/kVctAPayMU3pcOI1MKR7MoKIh6VKZU89lPklAqtJoxT+Em6RueiiARbpznUYG5eg3LymiU+aMD+aIZXdqA==
+"@stylistic/eslint-plugin-js@^2.6.4":
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/@stylistic/eslint-plugin-js/-/eslint-plugin-js-2.6.4.tgz#52e2b89e1f0878aaeeca3be832287bc060d3a422"
+  integrity sha512-kx1hS3xTvzxZLdr/DCU/dLBE++vcP97sHeEFX2QXhk1Ipa4K1rzPOLw1HCbf4mU3s+7kHP5eYpDe+QteEOFLug==
   dependencies:
     "@types/eslint" "^9.6.0"
     acorn "^8.12.1"
