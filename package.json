@@ -15,7 +15,7 @@
     "child_process": "^1.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.9",
+    "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@eslint/js": "^9.4.0",
     "@stylistic/eslint-plugin-js": "^2.6.4",
