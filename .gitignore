@@ -1,9 +1,14 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
 # dependencies
-node_modules
-bower_components
+/node_modules
+
+# testing
+/coverage
 
 # build
-build
+/build
+/dist
 
 # yarn
 .pnp.*
@@ -15,6 +20,6 @@ build
 !.yarn/versions
 
 # misc
-npm-debug.log
-yarn-error.log
-package-lock.json
+npm-debug.log*
+yarn-error.log*
+package-lock.json*
