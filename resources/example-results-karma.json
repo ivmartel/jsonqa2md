@@ -1,0 +1,98 @@
+{
+  "browsers": {
+    "52648829": {
+      "id": "52648829",
+      "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.0.0 Safari/537.36",
+      "name": "Chrome Headless 143.0.0.0 (Linux x86_64)",
+      "state": "DISCONNECTED",
+      "lastResult": {
+        "startTime": 1765376374209,
+        "total": 6,
+        "success": 5,
+        "failed": 1,
+        "skipped": 0,
+        "totalTime": 9,
+        "netTime": 4,
+        "error": false,
+        "disconnected": false
+      },
+      "disconnectsCount": 0,
+      "noActivityTimeout": 30000,
+      "disconnectDelay": 2000
+    }
+  },
+  "result": {
+    "52648829": [
+      {
+        "description": "Add int numbers - #JQ2MD-001 Add two numbers",
+        "suite": [
+          "math"
+        ],
+        "success": true,
+        "skipped": false,
+        "log": [],
+        "time": 2
+      },
+      {
+        "description": "Add float numbers - #JQ2MD-001 Add two numbers",
+        "suite": [
+          "math"
+        ],
+        "success": false,
+        "skipped": false,
+        "log": [
+          "add test #0\nExpected: 2.3\nActual: 2.2\n    at Object.<anonymous> (http://localhost:9876/absolute/tmp/_karma_webpack_525929/commons.js?95dfd960a732f69aa5bccbd5cba05c08785d549d:39:10)\n"
+        ],
+        "time": 2
+      },
+      {
+        "description": "Add zero - #JQ2MD-001 Add two numbers",
+        "suite": [
+          "math"
+        ],
+        "success": true,
+        "skipped": false,
+        "log": [],
+        "time": 0
+      },
+      {
+        "description": "Add negative - #JQ2MD-001 Add two numbers",
+        "suite": [
+          "math"
+        ],
+        "success": true,
+        "skipped": false,
+        "log": [],
+        "time": 0
+      },
+      {
+        "description": "Add two numbers0",
+        "suite": [
+          "math"
+        ],
+        "success": true,
+        "skipped": false,
+        "log": [],
+        "time": 0
+      },
+      {
+        "description": "Add two numbers1 - #JQ2MD-002 Add two numbers",
+        "suite": [
+          "math"
+        ],
+        "success": true,
+        "skipped": false,
+        "log": [],
+        "time": 0
+      }
+    ]
+  },
+  "summary": {
+    "success": 5,
+    "failed": 1,
+    "skipped": 0,
+    "error": false,
+    "disconnected": false,
+    "exitCode": 1
+  }
+}

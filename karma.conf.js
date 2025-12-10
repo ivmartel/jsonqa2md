@@ -6,7 +6,7 @@ module.exports = function (config) {
     basePath: '.',
     frameworks: ['qunit', 'webpack'],
     files: [
-      {pattern: './tests/**/*.test.js', watched: false}
+      {pattern: './karma/**/*.test.js', watched: false}
     ],
     client: {
       clearContext: false,
@@ -17,7 +17,7 @@ module.exports = function (config) {
     },
     preprocessors: {
       'src/**/*.js': ['webpack', 'sourcemap'],
-      'tests/**/*.test.js': ['webpack']
+      'karma/**/*.test.js': ['webpack']
     },
     coverageReporter: {
       dir: require('path').join(__dirname, './build/coverage'),

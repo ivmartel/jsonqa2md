@@ -16,6 +16,7 @@ QUnit.module('math');
  * @function module:tests/math~add-int-numbers
  */
 QUnit.test('Add int numbers - #JQ2MD-001 Add two numbers', function (assert) {
+  // purposely fail
   assert.equal(add(1, 1), 2, 'add test #0');
 });
 
