@@ -39,8 +39,9 @@
     "webpack-merge": "^6.0.1"
   },
   "scripts": {
-    "lint": "eslint 'src/**/*.js' 'tests/**/*.js' *.js",
+    "lint": "eslint 'src/**/*.js' 'karma/**/*.js' *.js",
     "test-karma": "karma start ./karma.conf.js --browsers ChromeHeadless --reporters progress,coverage,json --single-run",
+    "test-vitest": "vitest --no-watch",
     "doc": "jsdoc -c resources/doc/jsdoc.conf.json"
   },
   "packageManager": "yarn@4.12.0"
