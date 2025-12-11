@@ -179,9 +179,9 @@ for (const suite of testSuiteKeys) {
     }
     testWriteStream.write('\n- ' + testName + ': ');
     if (testResult.success) {
-      testWriteStream.write(emojiCheckMark + ' ');
+      testWriteStream.write(emojiCheckMark);
     } else {
-      testWriteStream.write(emojiCrossMark + ' ');
+      testWriteStream.write(emojiCrossMark);
     }
     testWriteStream.write('\n(');
     if (typeof testResult.req !== 'undefined') {
