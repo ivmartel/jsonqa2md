@@ -24,26 +24,6 @@ const testJSON = JSON.parse(fs.readFileSync(testResultsFilename));
 // for example 'Add zero - #JQ2MD-001 Add two numbers'
 const testDescPattern = /(.*) - #(\S*) (.*)/;
 
-let testContext;
-let testSuites;
-
-// extract info from test results
-if (isKarmaJsonTestResults(testJSON)) {
-  testContext = parseKarmaJsonTestContext(testJSON);
-  testSuites = parseKarmaJsonTestResults(testJSON);
-} else if (isVitestJsonTestResults(testJSON)) {
-  testContext = parseVitestJsonTestContext(testJSON);
-  testSuites = parseVitestJsonTestResults(testJSON);
-}
-
-// check
-if (typeof testContext === 'undefined') {
-  throw new Error('No test context');
-}
-if (typeof testSuites === 'undefined') {
-  throw new Error('No test suites');
-}
-
 // code context
 const pkgJSON = JSON.parse(fs.readFileSync(pkgFilename));
 const repoUrl = pkgJSON.repository.url;
@@ -71,6 +51,27 @@ if (gitTag.length !== 0) {
     name: gitHash.substring(0, 7),
     url: commitUrl
   };
+}
+
+let testContext;
+let testSuites;
+
+// extract info from test results
+if (isKarmaJsonTestResults(testJSON)) {
+  testContext = parseKarmaJsonTestContext(testJSON);
+  testSuites = parseKarmaJsonTestResults(testJSON);
+} else if (isVitestJsonTestResults(testJSON)) {
+  testContext = parseVitestJsonTestContext(testJSON);
+  testContext.env = 'jsdom ' + pkgJSON.devDependencies.jsdom;
+  testSuites = parseVitestJsonTestResults(testJSON);
+}
+
+// check
+if (typeof testContext === 'undefined') {
+  throw new Error('No test context');
+}
+if (typeof testSuites === 'undefined') {
+  throw new Error('No test suites');
 }
 
 // counts
@@ -135,9 +136,7 @@ if (typeof codeContext !== 'undefined') {
     codeContext.url + ')\n');
 }
 testWriteStream.write('\nDate: ' + new Date(testContext.startTime) + '\n');
-if (typeof testContext.browser !== 'undefined') {
-  testWriteStream.write('\nBrowser: ' + testContext.browser + '\n');
-}
+testWriteStream.write('\nEnvironement: ' + testContext.env + '\n');
 testWriteStream.write('\n');
 
 testWriteStream.write('## Summary\n');
@@ -260,7 +259,7 @@ function parseKarmaJsonTestContext(testJSON) {
     success: browser.lastResult.success,
     failed: browser.lastResult.failed,
     skipped: browser.lastResult.skipped,
-    browser: browser.name
+    env: browser.name
   };
 }
 
