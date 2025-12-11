@@ -1,0 +1,108 @@
+{
+  "numTotalTestSuites": 2,
+  "numPassedTestSuites": 0,
+  "numFailedTestSuites": 2,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 6,
+  "numPassedTests": 5,
+  "numFailedTests": 1,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1765377562693,
+  "success": false,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "#add"
+          ],
+          "fullName": "#add Add int numbers - #JQ2MD-001 Add two numbers",
+          "status": "passed",
+          "title": "Add int numbers - #JQ2MD-001 Add two numbers",
+          "duration": 1.289006999999998,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "#add"
+          ],
+          "fullName": "#add Add float numbers - #JQ2MD-001 Add two numbers",
+          "status": "failed",
+          "title": "Add float numbers - #JQ2MD-001 Add two numbers",
+          "duration": 5.37487999999999,
+          "failureMessages": [
+            "AssertionError: expected 2.2 to deeply equal 2.3\n    at /home/yves/dev/src/github/jsonqa2md/vitest/math.test.js:29:27\n    at file:///home/yves/dev/src/github/jsonqa2md/node_modules/@vitest/runner/dist/index.js:145:11\n    at file:///home/yves/dev/src/github/jsonqa2md/node_modules/@vitest/runner/dist/index.js:915:26\n    at file:///home/yves/dev/src/github/jsonqa2md/node_modules/@vitest/runner/dist/index.js:1240:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///home/yves/dev/src/github/jsonqa2md/node_modules/@vitest/runner/dist/index.js:1206:10)\n    at file:///home/yves/dev/src/github/jsonqa2md/node_modules/@vitest/runner/dist/index.js:1650:37\n    at Traces.$ (file:///home/yves/dev/src/github/jsonqa2md/node_modules/vitest/dist/chunks/traces.U4xDYhzZ.js:115:27)\n    at trace (file:///home/yves/dev/src/github/jsonqa2md/node_modules/vitest/dist/chunks/test.BT8LKgU9.js:239:21)\n    at runTest (file:///home/yves/dev/src/github/jsonqa2md/node_modules/@vitest/runner/dist/index.js:1650:12)"
+          ],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "#add"
+          ],
+          "fullName": "#add Add zero - #JQ2MD-001 Add two numbers",
+          "status": "passed",
+          "title": "Add zero - #JQ2MD-001 Add two numbers",
+          "duration": 0.15523600000000215,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "#add"
+          ],
+          "fullName": "#add Add negative - #JQ2MD-001 Add two numbers",
+          "status": "passed",
+          "title": "Add negative - #JQ2MD-001 Add two numbers",
+          "duration": 0.17256599999998912,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "#add"
+          ],
+          "fullName": "#add Add two numbers0",
+          "status": "passed",
+          "title": "Add two numbers0",
+          "duration": 0.1348769999999888,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "#add"
+          ],
+          "fullName": "#add Add two numbers1 - #JQ2MD-002 Add two numbers",
+          "status": "passed",
+          "title": "Add two numbers1 - #JQ2MD-002 Add two numbers",
+          "duration": 0.1716130000000078,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1765377562838,
+      "endTime": 1765377562845.1726,
+      "status": "failed",
+      "message": "",
+      "name": "/home/yves/dev/src/github/jsonqa2md/vitest/math.test.js"
+    }
+  ]
+}

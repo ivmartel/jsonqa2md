@@ -3,12 +3,6 @@
     "markdown": {
       "idInHeadings": true
     },
-    "source": {
-      "include": [
-        "src",
-        "tests"
-      ]
-    },
     "opts": {
       "recurse": true,
       "readme": "readme.md",

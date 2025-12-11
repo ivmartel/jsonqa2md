@@ -10,7 +10,7 @@ Default input:
 - `package.json`: json package description
 - `resources/doc/user-stories.json`: json requirements as a list of
 `{id, name, group, description}`
-- `build/test-results.json`: json tests results as output by Karma
+- `build/test-results.json`: json tests results as output by [karma-json-reporter](https://www.npmjs.com/package/karma-json-reporter) or Vitest [json-reporter](https://vitest.dev/guide/reporters.html#json-reporter)
 
 Test descriptions must make a reference to a requirement. They should be in the
 form of: `Add zero - #JQ2MD-001 Add two numbers` ([name] - [requirement key] [requirement name]).
@@ -22,11 +22,11 @@ Default output:
 Typical workflow:
 ```sh
 # run tests to generate test results
-yarn run test-ci
+yarn run test-vitest
 # convert json to md
 node jsonqa2md
 # integrate in documentation
-yarn run doc
+yarn run doc-vitest
 ```
 
 Inspired from https://github.com/davidahouse/junit-to-md
