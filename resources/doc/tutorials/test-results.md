@@ -2,9 +2,9 @@
 
 ## Context
 
-Date: Tue Apr 23 2024 18:55:01 GMT+0200 (Central European Summer Time)
-
 Commit: [8142c74](https://github.com/ivmartel/jsonqa2md/commit/8142c74690a60ad763ecd0c13bcff73c48681881)
+
+Date: Tue Apr 23 2024 18:55:01 GMT+0200 (Central European Summer Time)
 
 Browser: Chrome Headless 124.0.6367.60 (Linux x86_64)
 
@@ -21,22 +21,22 @@ Failed: 1 ❌
 
 ### math
 
-- Add int numbers: ✅ 
+- Add int numbers: ✅
 (URS [#JQ2MD-001 (Add two numbers)](tutorial-user-stories.html#jq2md-001-add-two-numbers), [jsdoc](module-tests_math.html#~add-int-numbers))
 
-- Add float numbers: ❌ 
+- Add float numbers: ❌
 (URS [#JQ2MD-001 (Add two numbers)](tutorial-user-stories.html#jq2md-001-add-two-numbers), [jsdoc](module-tests_math.html#~add-float-numbers))
 
-- Add zero: ✅ 
+- Add zero: ✅
 (URS [#JQ2MD-001 (Add two numbers)](tutorial-user-stories.html#jq2md-001-add-two-numbers), [jsdoc](module-tests_math.html#~add-zero))
 
-- Add negative: ✅ 
+- Add negative: ✅
 (URS [#JQ2MD-001 (Add two numbers)](tutorial-user-stories.html#jq2md-001-add-two-numbers), [jsdoc](module-tests_math.html#~add-negative))
 
-- Add two numbers0: ✅ 
+- Add two numbers0: ✅
 (⚠️ No requirement reference, [jsdoc](module-tests_math.html#~add-two-numbers0))
 
-- Add two numbers1: ✅ 
+- Add two numbers1: ✅
 (URS #JQ2MD-002 Add two numbers (⚠️ Unknown), [jsdoc](module-tests_math.html#~add-two-numbers1))
 
 ## Traceability
@@ -46,10 +46,10 @@ Failed: 1 ❌
 ### math
 
 URS [#JQ2MD-001 (Add two numbers)](tutorial-user-stories.html#jq2md-001-add-two-numbers):
- ✅ Add int numbers 
- ❌ Add float numbers 
- ✅ Add zero 
- ✅ Add negative 
+ ✅ Add int numbers
+ ❌ Add float numbers
+ ✅ Add zero
+ ✅ Add negative
 
 URS [#JQ2MD-002 (Substract two numbers)](tutorial-user-stories.html#jq2md-002-substract-two-numbers):
  ⚠️ No tests
