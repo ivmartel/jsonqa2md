@@ -221,7 +221,7 @@ for (const groupKey of resGroupKeys) {
         } else {
           testWriteStream.write(emojiCrossMark + ' ');
         }
-        testWriteStream.write(test.name + ' ');
+        testWriteStream.write(test.name);
         testWriteStream.write('\n');
       }
     } else {
