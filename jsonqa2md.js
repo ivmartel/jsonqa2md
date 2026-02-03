@@ -335,14 +335,20 @@ function isVitestJsonTestResults(testJSON) {
  * @returns {object} A context object.
  */
 function parseVitestJsonTestContext(testJSON) {
-  // expecting just one test result
-  if (testJSON.testResults.length !== 1) {
-    console.warn('More than one test result: ' + testJSON.testResults.length);
+  let startTime = testJSON.testResults[0].startTime;
+  let endTime = testJSON.testResults[0].endTime;
+  for (const testResult of testJSON.testResults) {
+    if (testResult.startTime < startTime) {
+      startTime = testResult.startTime;
+    }
+    if (testResult.endTime > endTime) {
+      endTime = testResult.endTime;
+    }
   }
-  const testResult = testJSON.testResults[0];
+
   return {
-    startTime: testResult.startTime,
-    totalTime: Math.round(testResult.endTime - testResult.startTime),
+    startTime: startTime,
+    totalTime: Math.round(endTime - startTime),
     total: testJSON.numTotalTests,
     success: testJSON.numPassedTests,
     failed: testJSON.numFailedTests,
@@ -357,26 +363,21 @@ function parseVitestJsonTestContext(testJSON) {
  * @returns {object} A test suite object with all the test results.
  */
 function parseVitestJsonTestResults(testJSON) {
-  // expecting just one test result
-  if (testJSON.testResults.length !== 1) {
-    console.warn('More than one test result: ' + testJSON.testResults.length);
-  }
-  const testResults = testJSON.testResults[0].assertionResults;
-
-  // sort test results suites
   const testSuites = {};
-  for (const testResult of testResults) {
-    const suiteName = testResult.ancestorTitles[0];
-    // create array if not preset
-    if (typeof testSuites[suiteName] === 'undefined') {
-      testSuites[suiteName] = [];
+  for (const testResult of testJSON.testResults) {
+    for (const assertionResult of testResult.assertionResults) {
+      const suiteName = assertionResult.ancestorTitles[0];
+      // create array if not preset
+      if (typeof testSuites[suiteName] === 'undefined') {
+        testSuites[suiteName] = [];
+      }
+      // add to list
+      testSuites[suiteName].push({
+        description: assertionResult.title,
+        success: assertionResult.status === 'passed',
+        suite: suiteName
+      });
     }
-    // add to list
-    testSuites[suiteName].push({
-      description: testResult.title,
-      success: testResult.status === 'passed',
-      suite: suiteName
-    });
   }
 
   return testSuites;
