@@ -9,14 +9,46 @@ import {add} from '../src/math';
 /** @module tests/math */
 describe('math', () => {
 
-  /**
-   * Tests for add.
-   *
-   * @function module:tests/math~add-int-numbers
-   */
-  test('Add int numbers - #JQ2MD-001 Add two numbers', () => {
-    // purposely fail
-    expect(add(1, 1)).toEqual(2);
+  describe('Add int', () => {
+
+    /**
+     * Tests for {@link add}.
+     *
+     * @function module:tests/math~add-int-small-numbers
+     */
+    test('small numbers - #JQ2MD-001 Add two numbers', () => {
+      // purposely fail
+      expect(add(1, 1)).toEqual(2);
+    });
+
+    /**
+     * Tests for {@link add}.
+     *
+     * @function module:tests/math~add-int-big-numbers
+     */
+    test('big numbers - #JQ2MD-001 Add two numbers', () => {
+      // purposely fail
+      expect(add(1000000000000, 1)).toEqual(1000000000001);
+    });
+
+    /**
+     * Tests for add.
+     *
+     * @function module:tests/math~add-zero
+     */
+    test('zero - #JQ2MD-001 Add two numbers', () => {
+      expect(add(0, 0)).toEqual(0);
+    });
+
+    /**
+     * Tests for add.
+     *
+     * @function module:tests/math~add-negative
+     */
+    test('negative - #JQ2MD-001 Add two numbers', () => {
+      expect(add(-1, -1)).toEqual(-2);
+    });
+
   });
 
   /**
@@ -26,24 +58,6 @@ describe('math', () => {
    */
   test('Add float numbers - #JQ2MD-001 Add two numbers', () => {
     expect(add(1.1, 1.1)).toEqual(2.3);
-  });
-
-  /**
-   * Tests for add.
-   *
-   * @function module:tests/math~add-zero
-   */
-  test('Add zero - #JQ2MD-001 Add two numbers', () => {
-    expect(add(0, 0)).toEqual(0);
-  });
-
-  /**
-   * Tests for add.
-   *
-   * @function module:tests/math~add-negative
-   */
-  test('Add negative - #JQ2MD-001 Add two numbers', () => {
-    expect(add(-1, -1)).toEqual(-2);
   });
 
   /**
