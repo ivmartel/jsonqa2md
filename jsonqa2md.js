@@ -366,14 +366,21 @@ function parseVitestJsonTestResults(testJSON) {
   const testSuites = {};
   for (const testResult of testJSON.testResults) {
     for (const assertionResult of testResult.assertionResults) {
-      const suiteName = assertionResult.ancestorTitles[0];
+      const ancestorTitles = assertionResult.ancestorTitles;
+      const suiteName = ancestorTitles[0];
       // create array if not preset
       if (typeof testSuites[suiteName] === 'undefined') {
         testSuites[suiteName] = [];
       }
+      let prefix = '';
+      if (ancestorTitles.length > 1) {
+        for (let i = 1; i < ancestorTitles.length; ++i) {
+          prefix += ancestorTitles[i] + ' ';
+        }
+      }
       // add to list
       testSuites[suiteName].push({
-        description: assertionResult.title,
+        description: prefix + assertionResult.title,
         success: assertionResult.status === 'passed',
         suite: suiteName
       });
