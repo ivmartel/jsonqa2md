@@ -1,6 +1,6 @@
 {
   "name": "jsonqa2md",
-  "version": "0.1.0",
+  "version": "0.2.0-beta.0",
   "description": "json QA to markdown",
   "license": "GPL-3.0",
   "author": "ivmartel <ivmartel@gmail.com>",

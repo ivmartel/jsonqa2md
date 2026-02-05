@@ -12,7 +12,7 @@
       "package": "package.json",
       "theme_opts": {
         "title": "jsonqa2md doc",
-        "footer": "<i>Documentation generated for jsonqa2md v0.1.0</i>",
+        "footer": "<i>Documentation generated for jsonqa2md v0.2.0-beta.0</i>",
         "sections": [
           "Tutorials",
           "Namespaces",
