@@ -23,7 +23,7 @@
     "babel-plugin-istanbul": "^8.0.0",
     "clean-jsdoc-theme": "^4.3.2",
     "eslint": "^10.5.0",
-    "globals": "^17.6.0",
+    "globals": "^17.7.0",
     "jsdoc": "^4.0.5",
     "jsdom": "^29.1.1",
     "karma": "^6.4.4",
