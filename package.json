@@ -21,7 +21,7 @@
     "@stylistic/eslint-plugin": "^5.10.0",
     "babel-loader": "^10.1.1",
     "babel-plugin-istanbul": "^8.0.0",
-    "clean-jsdoc-theme": "^5.0.7",
+    "clean-jsdoc-theme": "^5.0.8",
     "eslint": "^10.7.0",
     "globals": "^17.7.0",
     "jsdoc": "^4.0.5",
