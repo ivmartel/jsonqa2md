@@ -6828,7 +6828,7 @@ __metadata:
     karma-chrome-launcher: "npm:^3.2.0"
     karma-coverage: "npm:^2.2.1"
     karma-json-reporter: "npm:^1.2.1"
-    karma-qunit: "npm:^4.2.1"
+    karma-qunit: "npm:^4.2.3"
     karma-sourcemap-loader: "npm:^0.4.0"
     karma-webpack: "npm:^5.0.1"
     libxmljs2: "npm:^0.37.0"
@@ -6873,13 +6873,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"karma-qunit@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "karma-qunit@npm:4.2.1"
+"karma-qunit@npm:^4.2.3":
+  version: 4.2.3
+  resolution: "karma-qunit@npm:4.2.3"
   peerDependencies:
     karma: ^4.0.0 || ^5.0.0 || ^6.0.0
-    qunit: ">=2.1.1"
-  checksum: 10c0/8c3bca500a1de339646c9a405c8559efe0ed4b4b89137ec805119837eb628f1c1b7599512f8bde57d37a33f5947635a1cfdde80650faf02afb0aee193ad0a68e
+    qunit: ">=2.2.0"
+  checksum: 10c0/5486ea92dfcbbae572a3487130ff793e9e03d2a5b318a3762bf4d9e81edde7c40bb697260822598d1347ae9dc3216d7f46a00061d908096e73c0d6ded2c06bb6
   languageName: node
   linkType: hard
 
