@@ -440,8 +440,7 @@ function addContextToTestSuites(testSuites, requirements, testDescPattern) {
         ++numberOfTestsNoReq;
       }
       // test code link
-      const testNameLink = testName.replaceAll(' ', '-');
-      const testNameAnchor = testNameLink.toLowerCase();
+      const testNameAnchor = slugify(testName);
       const linkUrl =
         modulesDir + 'tests-' + testResult.suite +
         '#' + encodeURIComponent(testNameAnchor);
@@ -451,6 +450,28 @@ function addContextToTestSuites(testSuites, requirements, testDescPattern) {
   }
 
   return {numberOfTestsBadReq, numberOfTestsNoReq};
+}
+
+/**
+ * Get the anchor slug of a heading text, matching the
+ * clean-jsdoc-theme (GitHub-style) heading slugifier:
+ * drops any character that is not a letter, number, mark,
+ * space or hyphen (for example '/') and collapses spaces
+ * and hyphens into a single hyphen.
+ *
+ * @param {string} text The heading text.
+ * @returns {string} The slug.
+ */
+function slugify(text) {
+  return String(text)
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]+/g, '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\p{M}\s-]+/gu, '')
+    .trim()
+    .replace(/[\s-]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .normalize('NFC');
 }
 
 /**
@@ -469,8 +490,8 @@ function getRequirementGroups(requirements) {
       reqGroups[req.group] = [];
     }
     // link
-    const reqNameLink = req.name.replaceAll(' ', '-');
-    const reqNameAnchor = (req.id + '-' + reqNameLink).toLowerCase();
+    // same text as the requirement heading
+    const reqNameAnchor = slugify(req.id + ' ' + req.name);
     const linkUrl = reqTutorial + '#' + encodeURIComponent(reqNameAnchor);
     const linkText = '#' + req.id + ' (' + req.name + ')';
     req.link = 'URS [' + linkText + '](' + linkUrl + ')';
