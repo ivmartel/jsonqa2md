@@ -10,10 +10,6 @@
     "type": "git",
     "url": "https://github.com/ivmartel/jsonqa2md"
   },
-  "dependencies": {
-    "child_process": "^1.0.2",
-    "libxmljs2": "^0.37.0"
-  },
   "devDependencies": {
     "@babel/core": "^8.0.7",
     "@babel/preset-env": "^8.0.7",
