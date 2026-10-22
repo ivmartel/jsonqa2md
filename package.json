@@ -47,5 +47,5 @@
     "doc-karma": "jsdoc src karma -c resources/doc/jsdoc.conf.json",
     "doc-vitest": "jsdoc src vitest -c resources/doc/jsdoc.conf.json"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.18.0"
 }
