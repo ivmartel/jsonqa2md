@@ -34,7 +34,7 @@ describe('math', () => {
     /**
      * Tests for add.
      *
-     * @function module:tests/math~add-zero
+     * @function module:tests/math~add-int-zero
      */
     test('zero - #JQ2MD-001 Add two numbers', () => {
       expect(add(0, 0)).toEqual(0);
@@ -43,7 +43,7 @@ describe('math', () => {
     /**
      * Tests for add.
      *
-     * @function module:tests/math~add-negative
+     * @function module:tests/math~add-int-negative
      */
     test('negative - #JQ2MD-001 Add two numbers', () => {
       expect(add(-1, -1)).toEqual(-2);

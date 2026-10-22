@@ -27,6 +27,8 @@ yarn run test-vitest
 node jsonqa2md
 # integrate in documentation
 yarn run doc-vitest
+# serve doc
+npx serve build/doc
 ```
 
 Inspired from https://github.com/davidahouse/junit-to-md

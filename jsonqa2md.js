@@ -6,8 +6,12 @@ const reqFilename = 'resources/doc/user-stories.json';
 const testResultsFilename = 'build/test-results.json';
 // used for repo info
 const pkgFilename = 'package.json';
-// used for links
-const reqTutorial = 'tutorial-user-stories.html';
+// used for links: absolute, prefixed with the theme basePath (default '/')
+const jsdocConfFilename = 'resources/doc/jsdoc.conf.json';
+const jsdocOpts = JSON.parse(fs.readFileSync(jsdocConfFilename)).opts;
+const basePath = (jsdocOpts.basePath ?? '/').replace(/\/?$/, '/');
+const reqTutorial = basePath + 'tutorials/user-stories';
+const modulesDir = basePath + 'module/';
 
 // outputs
 const reqMdFilename = 'resources/doc/tutorials/user-stories.md';
@@ -439,8 +443,8 @@ function addContextToTestSuites(testSuites, requirements, testDescPattern) {
       const testNameLink = testName.replaceAll(' ', '-');
       const testNameAnchor = testNameLink.toLowerCase();
       const linkUrl =
-        'module-tests_' + testResult.suite +
-        '.html#~' + encodeURIComponent(testNameAnchor);
+        modulesDir + 'tests-' + testResult.suite +
+        '#' + encodeURIComponent(testNameAnchor);
       const linkText = 'jsdoc';
       testResult.jsdoclink = '[' + linkText + '](' + linkUrl + ')';
     }
