@@ -144,33 +144,40 @@ testWriteStream.write('\nEnvironement: ' + testContext.env + '\n');
 testWriteStream.write('\n');
 
 testWriteStream.write('## Summary\n');
-testWriteStream.write(
-  'Success: ' + testContext.success + ' ' + emojiCheckMark + '\n');
-testWriteStream.write(
-  '\nFailed: ' + testContext.failed + ' ' + emojiCrossMark + '\n');
-testWriteStream.write('\n(total: ' + testContext.total + ', ');
+testWriteStream.write('Results: ' +
+  getPercentString(testContext.success, numberOfTests) + ' ' +
+  emojiCheckMark + ' - ' +
+  getPercentString(testContext.failed, numberOfTests) + ' ' +
+  emojiCrossMark + '\n');
+testWriteStream.write('\nTotal tests: ' + testContext.total + ' (');
 testWriteStream.write('skipped: ' + testContext.skipped + ', ');
 testWriteStream.write('total time: ' + testContext.totalTime + 'ms)\n');
 testWriteStream.write('\n');
-
-testWriteStream.write('## Tests details\n');
-testWriteStream.write('\n');
 const numberOfTestsWithReq =
   numberOfTests - (numberOfTestsNoReq + numberOfTestsBadReq);
-const finalSWithReq = numberOfTestsWithReq > 1 ? 's' : '';
-testWriteStream.write('(' + numberOfTestsWithReq +
-  ' / ' + numberOfTests + ' test' + finalSWithReq + ' with requirement(s)');
+testWriteStream.write(
+  getPercentString(numberOfTestsWithReq, numberOfTests) + ' ' +
+  getPlural(numberOfTestsWithReq, 'test') + ' with requirement(s)');
 if (numberOfTestsNoReq !== 0) {
   testWriteStream.write(', ' +
-    getNumberString(numberOfTestsNoReq, 'test') +
-    ' with no requirement');
+    getPercentString(numberOfTestsNoReq, numberOfTests) + ' ' +
+    getPlural(numberOfTestsNoReq, 'test') + ' with no requirement');
 }
 if (numberOfTestsBadReq !== 0) {
   testWriteStream.write(', ' +
-    getNumberString(numberOfTestsBadReq, 'test') +
+    getPercentString(numberOfTestsBadReq, numberOfTests) + ' ' +
+    getPlural(numberOfTestsBadReq, 'test') +
     ' with bad requirement reference');
 }
-testWriteStream.write(')\n');
+testWriteStream.write('\n');
+testWriteStream.write('\n');
+const numberOfReqWithTest = numberOfReq - numberOfReqNoTests;
+testWriteStream.write(
+  getPercentString(numberOfReqWithTest, numberOfReq, true) +
+  ' tested requirements\n');
+testWriteStream.write('\n');
+
+testWriteStream.write('## Tests details\n');
 testWriteStream.write('\n');
 const testSuiteKeys = Object.keys(testSuites);
 for (const suite of testSuiteKeys) {
@@ -207,10 +214,6 @@ for (const suite of testSuiteKeys) {
 
 testWriteStream.write('\n## Traceability\n');
 testWriteStream.write('\n');
-const numberOfReqWithTest = numberOfReq - numberOfReqNoTests;
-testWriteStream.write('(' + numberOfReqWithTest +
-  ' / ' + numberOfReq + ' tested requirements)\n');
-testWriteStream.write('\n');
 for (const groupKey of resGroupKeys) {
   testWriteStream.write('### ' + groupKey + '\n');
   testWriteStream.write('\n');
@@ -238,15 +241,31 @@ for (const groupKey of resGroupKeys) {
 testWriteStream.end();
 
 /**
- * Get a string representation of a number.
+ * Get the plural form of a type if needed.
  *
  * @param {number} number The number.
  * @param {string} type The numbered type.
- * @returns A string as '%number% %type%[s]'.
+ * @returns A string as '%type%[s]'.
  */
-function getNumberString(number, type) {
-  const finalS = number > 1 ? 's' : '';
-  return number + ' ' + type + finalS;
+function getPlural(number, type) {
+  return type + (number > 1 ? 's' : '');
+}
+
+/**
+ * Get a percentage string representation of a number.
+ *
+ * @param {number} number The number.
+ * @param {number} total The total.
+ * @param {boolean} [withTotal] Flag to add the total, defaults to false.
+ * @returns A string as '%percent%% (%number%[ / %total%])'.
+ */
+function getPercentString(number, total, withTotal) {
+  const percent = total !== 0 ? Math.round(100 * number / total) : 0;
+  let res = percent + '% (' + number;
+  if (withTotal) {
+    res += ' / ' + total;
+  }
+  return res + ')';
 }
 
 /**
