@@ -16,15 +16,7 @@ module.exports = merge(common, {
           // babel loader with istanbul
           loader: 'babel-loader',
           options: {
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  useBuiltIns: 'entry',
-                  corejs: '3.22'
-                }
-              ]
-            ],
+            presets: ['@babel/preset-env'],
             plugins: ['istanbul']
           }
         }
