@@ -1,5 +1,5 @@
 {
-    "plugins": ["node_modules/jsdoc/plugins/markdown"],
+    "plugins": ["plugins/markdown"],
     "markdown": {
       "idInHeadings": true
     },
@@ -7,27 +7,27 @@
       "recurse": true,
       "readme": "readme.md",
       "destination": "build/doc",
-      "template": "node_modules/clean-jsdoc-theme",
+      "template": "node_modules/clean-jsdoc-theme/dist",
       "tutorials": "resources/doc/tutorials",
       "package": "package.json",
-      "theme_opts": {
-        "title": "jsonqa2md doc",
-        "footer": "<i>Documentation generated for jsonqa2md v0.2.0-beta.0</i>",
-        "sections": [
-          "Tutorials",
-          "Namespaces",
-          "Classes",
-          "Externals",
-          "Modules"
-        ],
-        "menu": [
-          {
-            "title": "github",
-            "link": "https://github.com/ivmartel/jsonqa2md",
-            "target": "_blank"
-          }
-        ],
-        "create_style": "ul {list-style-type: disc !important;} ul ul {list-style-type: circle !important;}"
-      }
+      "siteName": "jsonqa2md doc",
+      "sectionOrder": [
+        "Tutorials",
+        "Namespaces",
+        "Classes",
+        "Externals",
+        "Modules"
+      ],
+      "menu": [
+        { "id": "home" },
+        {
+          "id": "github",
+          "title": "github",
+          "link": "https://github.com/ivmartel/jsonqa2md",
+          "target": "_blank"
+        },
+        { "id": "source" }
+      ],
+      "customCss": "ul {list-style-type: disc !important;} ul ul {list-style-type: circle !important;}"
     }
 }
