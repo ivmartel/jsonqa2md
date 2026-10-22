@@ -2,22 +2,22 @@
 
 ## Context
 
-Commit: [da648a0](https://github.com/ivmartel/jsonqa2md/commit/da648a0aff4ef95ae48ff751d256292485fb9315)
+Commit: [3a546e7](https://github.com/ivmartel/jsonqa2md/commit/3a546e763daa28e36d60af1493b230c3f8e4dbab)
 
 Date: Thu Oct 22 2026 17:56:37 GMT+0200 (Central European Summer Time)
 
 Environement: jsdom ^30.1.3
 
 ## Summary
-Success: 6 ✅
+Results: 86% (6) ✅ - 14% (1) ❌
 
-Failed: 1 ❌
+Total tests: 7 (skipped: 0, total time: 8ms)
 
-(total: 7, skipped: 0, total time: 8ms)
+71% (5) tests with requirement(s), 14% (1) test with no requirement, 14% (1) test with bad requirement reference
+
+20% (1 / 5) tested requirements
 
 ## Tests details
-
-(5 / 7 tests with requirement(s), 1 test with no requirement, 1 test with bad requirement reference)
 
 ### math
 
@@ -43,8 +43,6 @@ Failed: 1 ❌
 (URS #JQ2MD-002 Add two numbers (⚠️ Unknown), [jsdoc](/module/tests-math#add-two-numbers1))
 
 ## Traceability
-
-(1 / 5 tested requirements)
 
 ### math
 
