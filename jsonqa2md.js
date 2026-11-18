@@ -182,60 +182,64 @@ testWriteStream.write('\n');
 const testSuiteKeys = Object.keys(testSuites);
 for (const suite of testSuiteKeys) {
   testWriteStream.write('### ' + suite + '\n');
+  testWriteStream.write('\n');
+  testWriteStream.write('| Test | Result | Requirement | Code |\n');
+  testWriteStream.write('| --- | :---: | --- | --- |\n');
   for (const testResult of testSuites[suite]) {
     let testName = testResult.description;
     if (typeof testResult.name !== 'undefined') {
       testName = testResult.name;
     }
-    testWriteStream.write('\n- ' + testName + ': ');
-    if (testResult.success) {
-      testWriteStream.write(emojiCheckMark);
-    } else {
-      testWriteStream.write(emojiCrossMark);
-    }
-    testWriteStream.write('\n(');
+    const result = testResult.success ? emojiCheckMark : emojiCrossMark;
+    let reqText;
     if (typeof testResult.req !== 'undefined') {
       if (typeof testResult.req.link !== 'undefined') {
-        testWriteStream.write(testResult.req.link);
+        reqText = testResult.req.link;
       } else {
         // description matches regex but no requirement found
-        testWriteStream.write('URS #' + testResult.req.id +
-          ' ' + testResult.req.name + ' (' + emojiWarn + ' Unknown)');
+        reqText = 'URS #' + testResult.req.id +
+          ' ' + testResult.req.name + ' (' + emojiWarn + ' Unknown)';
       }
     } else {
-      testWriteStream.write(emojiWarn + ' No requirement reference');
+      reqText = emojiWarn + ' No requirement reference';
     }
-    testWriteStream.write(', ' + testResult.jsdoclink);
-    testWriteStream.write(')');
-
-    testWriteStream.write('\n');
+    testWriteStream.write('| ' +
+      escapeTableCell(testName) + ' | ' +
+      result + ' | ' +
+      escapeTableCell(reqText) + ' | ' +
+      testResult.jsdoclink + ' |\n');
   }
+  testWriteStream.write('\n');
 }
 
-testWriteStream.write('\n## Traceability\n');
+testWriteStream.write('## Traceability\n');
 testWriteStream.write('\n');
 for (const groupKey of resGroupKeys) {
   testWriteStream.write('### ' + groupKey + '\n');
   testWriteStream.write('\n');
+  testWriteStream.write('| Requirement | Test | Result |\n');
+  testWriteStream.write('| --- | --- | :---: |\n');
   for (const req of reqGroups[groupKey]) {
-    testWriteStream.write(req.link + ':\n');
+    const reqText = escapeTableCell(req.link);
     // associated test list
     if (typeof req.tests !== 'undefined') {
+      // only show the requirement on its first test row
+      let reqCell = reqText;
       for (const test of req.tests) {
-        testWriteStream.write(' ');
-        if (test.success) {
-          testWriteStream.write(emojiCheckMark + ' ');
-        } else {
-          testWriteStream.write(emojiCrossMark + ' ');
-        }
-        testWriteStream.write(test.name);
-        testWriteStream.write('\n');
+        const result = test.success ? emojiCheckMark : emojiCrossMark;
+        testWriteStream.write('| ' +
+          reqCell + ' | ' +
+          escapeTableCell(test.name) + ' | ' +
+          result + ' |\n');
+        reqCell = '';
       }
     } else {
-      testWriteStream.write(' ' + emojiWarn + ' No tests\n');
+      testWriteStream.write('| ' +
+        reqText + ' | ' +
+        emojiWarn + ' No tests |  |\n');
     }
-    testWriteStream.write('\n');
   }
+  testWriteStream.write('\n');
 }
 
 testWriteStream.end();
@@ -249,6 +253,16 @@ testWriteStream.end();
  */
 function getPlural(number, type) {
   return type + (number > 1 ? 's' : '');
+}
+
+/**
+ * Escape a text to be used in a markdown table cell.
+ *
+ * @param {string} text The text to escape.
+ * @returns {string} The escaped text.
+ */
+function escapeTableCell(text) {
+  return String(text).replace(/\|/g, '\\|').replace(/\n/g, ' ');
 }
 
 /**
