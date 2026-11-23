@@ -369,23 +369,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clean-jsdoc-theme/bhasha@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "@clean-jsdoc-theme/bhasha@npm:5.2.1"
+"@clean-jsdoc-theme/bhasha@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@clean-jsdoc-theme/bhasha@npm:5.3.0"
   dependencies:
-    "@clean-jsdoc-theme/utils": "npm:^5.2.1"
+    "@clean-jsdoc-theme/utils": "npm:^5.3.0"
   peerDependencies:
     preact: ^10.22.0
-  checksum: 10c0/1efdc27d0fe55fd56a06a11abbf4608ae133159775c10d44c8bb294a2cee2e41ea9a3446849eadd102ef99537a37e6ed153cadd9e740631995b259cde28f9687
+  checksum: 10c0/71f02e4f719186654e3e1e83f639e64d68ae56c1ffa245b5427e57649f5b21e62514ce0ce027b5cea02a151adb3739f81b7be6b6da5032d5c5d20f5411074a7e
   languageName: node
   linkType: hard
 
-"@clean-jsdoc-theme/dwar@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "@clean-jsdoc-theme/dwar@npm:5.2.1"
+"@clean-jsdoc-theme/dwar@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@clean-jsdoc-theme/dwar@npm:5.3.0"
   dependencies:
-    "@clean-jsdoc-theme/rang": "npm:^5.2.1"
-    "@clean-jsdoc-theme/utils": "npm:^5.2.1"
+    "@clean-jsdoc-theme/rang": "npm:^5.3.0"
+    "@clean-jsdoc-theme/utils": "npm:^5.3.0"
     "@mdx-js/mdx": "npm:^3.0.0"
     "@shikijs/rehype": "npm:^4.2.0"
     esbuild: "npm:^0.28.0"
@@ -395,16 +395,16 @@ __metadata:
     shiki: "npm:^4.2.0"
   peerDependencies:
     preact: ^10.22.0
-  checksum: 10c0/23abd13add03fbee8958a13684faf239ad46bdd55f4a2b99358b78636971c9a0c90b54ef40d4a26b6d61d35b36f97916d8aeb2085b067541d0040fd146e9afa7
+  checksum: 10c0/36fca9d552770f81817f157e526ba870bb5b1e09d07bf797e0faaf56c53d4096648c838f3a9dd21c7d908bbf6200bdf46447b47a67b1720df63c661cd2e09950
   languageName: node
   linkType: hard
 
-"@clean-jsdoc-theme/rang@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "@clean-jsdoc-theme/rang@npm:5.2.1"
+"@clean-jsdoc-theme/rang@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@clean-jsdoc-theme/rang@npm:5.3.0"
   dependencies:
-    "@clean-jsdoc-theme/bhasha": "npm:^5.2.1"
-    "@clean-jsdoc-theme/utils": "npm:^5.2.1"
+    "@clean-jsdoc-theme/bhasha": "npm:^5.3.0"
+    "@clean-jsdoc-theme/utils": "npm:^5.3.0"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
     lucide-preact: "npm:^1.17.0"
@@ -412,17 +412,18 @@ __metadata:
     tailwind-merge: "npm:^3.6.0"
   peerDependencies:
     preact: ^10.22.0
-  checksum: 10c0/1f4819ab43c9dae31a75360ea60029980dd7593a1b862511fb46d320ac9b945120ca1937ef31562f962bb16b291a34ae172b8073954b81315ae9f620e56b07ca
+  checksum: 10c0/258cff84410b23807246ce401f4d2f3398b5452b135a11b1019543057700fb04c314150cc15c3c1deccc45310842a66f96fe1943458184567e9acb5116ab5bac
   languageName: node
   linkType: hard
 
-"@clean-jsdoc-theme/setu@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "@clean-jsdoc-theme/setu@npm:5.2.1"
+"@clean-jsdoc-theme/setu@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@clean-jsdoc-theme/setu@npm:5.3.0"
   dependencies:
-    "@clean-jsdoc-theme/bhasha": "npm:^5.2.1"
-    "@clean-jsdoc-theme/utils": "npm:^5.2.1"
+    "@clean-jsdoc-theme/bhasha": "npm:^5.3.0"
+    "@clean-jsdoc-theme/utils": "npm:^5.3.0"
     "@jsdoc/salty": "npm:^0.2.12"
+    decode-named-character-reference: "npm:^1.3.0"
     hast-util-from-html: "npm:^2.0.3"
     hast-util-to-html: "npm:^9.0.5"
     hast-util-to-mdast: "npm:^10.1.2"
@@ -435,16 +436,16 @@ __metadata:
     turndown: "npm:^7.2.4"
   peerDependencies:
     preact: ^10.22.0
-  checksum: 10c0/0a69c039fc1bbbcf2181cd2532daf938832a8b57e08b2074307cce0040aee1bc52a979c2390f2900ae4190acd4384859ea6ab93fc4eb23bed3696b95d64a8fb6
+  checksum: 10c0/21fee5646f2cabf5262d97750dddd9cf46b40ea9890d018cec00137b3c04642764bcf58512096b12df111edc76eeabc3605c816b89f338d70aba1f4aa1bae9db
   languageName: node
   linkType: hard
 
-"@clean-jsdoc-theme/utils@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "@clean-jsdoc-theme/utils@npm:5.2.1"
+"@clean-jsdoc-theme/utils@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@clean-jsdoc-theme/utils@npm:5.3.0"
   dependencies:
     zod: "npm:^4.3.6"
-  checksum: 10c0/4e7f86e5402bb2954a4fcafffee54bc3523397ba911e13debc6f2afcb6002bca38b1a511c22b3ad50593e4993e09a88a0ad6d45cd772e85541b3493edc7dff49
+  checksum: 10c0/72a81478ef166ca295d32f0acf564a24c18897f5390be73c203c9c41ab0b448b89d3706eed2b15df31313aa652b2b211d9d2c965856bb8418d0c2ed3d41e25d0
   languageName: node
   linkType: hard
 
@@ -3022,20 +3023,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clean-jsdoc-theme@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "clean-jsdoc-theme@npm:5.2.1"
+"clean-jsdoc-theme@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "clean-jsdoc-theme@npm:5.3.0"
   dependencies:
-    "@clean-jsdoc-theme/bhasha": "npm:^5.2.1"
-    "@clean-jsdoc-theme/dwar": "npm:^5.2.1"
-    "@clean-jsdoc-theme/rang": "npm:^5.2.1"
-    "@clean-jsdoc-theme/setu": "npm:^5.2.1"
-    "@clean-jsdoc-theme/utils": "npm:^5.2.1"
+    "@clean-jsdoc-theme/bhasha": "npm:^5.3.0"
+    "@clean-jsdoc-theme/dwar": "npm:^5.3.0"
+    "@clean-jsdoc-theme/rang": "npm:^5.3.0"
+    "@clean-jsdoc-theme/setu": "npm:^5.3.0"
+    "@clean-jsdoc-theme/utils": "npm:^5.3.0"
     ora: "npm:^9.3.0"
     preact: "npm:^10.22.0"
   peerDependencies:
     jsdoc: ">=4.x"
-  checksum: 10c0/839f849caac7bb2212ed70a4cd439cd48c6d4e00acb628e9479afbd6d3a1343b93c60e3a2fea2ad0902d5762e02dfb9a0d77bfadd1f45b8a9c48195361240fa7
+  checksum: 10c0/dd56a86662e1cd0e03bda269d697fc5fe9806b1180398930faebd7821b68e2747e1be25768963cb9dc5d5223a2a613c205f87e5bab9f2102eadfeaef348f1497
   languageName: node
   linkType: hard
 
@@ -3331,7 +3332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decode-named-character-reference@npm:^1.0.0":
+"decode-named-character-reference@npm:^1.0.0, decode-named-character-reference@npm:^1.3.0":
   version: 1.3.0
   resolution: "decode-named-character-reference@npm:1.3.0"
   dependencies:
@@ -5517,7 +5518,7 @@ __metadata:
     "@stylistic/eslint-plugin": "npm:^5.10.0"
     babel-loader: "npm:^10.1.1"
     babel-plugin-istanbul: "npm:^8.0.0"
-    clean-jsdoc-theme: "npm:^5.2.1"
+    clean-jsdoc-theme: "npm:^5.3.0"
     eslint: "npm:^10.15.0"
     globals: "npm:^17.14.0"
     jsdoc: "npm:^4.0.5"
